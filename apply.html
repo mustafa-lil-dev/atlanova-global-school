@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Now — Atlanova Global School</title>
+<meta name="description" content="Start your child's application to Atlanova Global School in a few guided steps.">
+<link rel="icon" href="assets/mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="assets/mark.png" alt="Atlanova monogram"><span class="brand-text">Atlanova<small>Global School</small></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="programs.html">Programs</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="about.html">Why Atlanova</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="parents.html">For Parents</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-cta"><a href="login.html" class="nav-login">Login</a><a href="apply.html" class="btn btn-primary btn-sm">Apply Now</a></div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  </header>
+<div class="mobile-menu">
+    <a href="programs.html">Programs</a><a href="how-it-works.html">How It Works</a><a href="curriculum.html">Curriculum</a>
+    <a href="about.html">Why Atlanova</a><a href="admissions.html">Admissions</a><a href="parents.html">For Parents</a>
+    <a href="about.html">About</a><a href="login.html">Login</a><a href="apply.html" class="btn btn-primary btn-block">Apply Now</a>
+  </div>
+
+
+<section class="page-header">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> / <a href="admissions.html">Admissions</a> / Apply</p>
+    <p class="eyebrow">Application</p>
+    <h1>Apply to Atlanova Global School</h1>
+    <p>This guided application takes about 10 minutes. You can review everything before you submit.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:820px;">
+
+    <div class="stepper">
+      <div class="step active"><div class="dot">1</div><span class="label">Student</span></div>
+      <div class="step"><div class="dot">2</div><span class="label">Parent</span></div>
+      <div class="step"><div class="dot">3</div><span class="label">Academic</span></div>
+      <div class="step"><div class="dot">4</div><span class="label">Documents</span></div>
+      <div class="step"><div class="dot">5</div><span class="label">Review</span></div>
+    </div>
+
+    <form class="form-card" onsubmit="return false;">
+
+      <!-- Step 1: Student -->
+      <div class="form-step active">
+        <h3 style="font-size:22px;margin-bottom:22px;">Student Information</h3>
+        <div class="field">
+          <label for="studentName">Full name</label>
+          <input type="text" id="studentName" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="studentDob">Date of birth</label>
+            <input type="date" id="studentDob" required>
+          </div>
+          <div class="field">
+            <label for="studentGrade">Applying for grade</label>
+            <select id="studentGrade" required>
+              <option value="">Select grade</option>
+              <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option>
+              <option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+              <option>Grade 7</option><option>Grade 8</option>
+            </select>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="studentCountry">Country of residence</label>
+            <input type="text" id="studentCountry" required>
+          </div>
+          <div class="field">
+            <label for="previousSchool">Previous school (if any)</label>
+            <input type="text" id="previousSchool">
+          </div>
+        </div>
+        <div class="form-nav">
+          <span></span>
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 2: Parent -->
+      <div class="form-step">
+        <h3 style="font-size:22px;margin-bottom:22px;">Parent / Guardian Information</h3>
+        <div class="field">
+          <label for="parentName">Full name</label>
+          <input type="text" id="parentName" required>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="parentEmail">Email address</label>
+            <input type="email" id="parentEmail" required>
+          </div>
+          <div class="field">
+            <label for="parentPhone">Phone number</label>
+            <input type="tel" id="parentPhone" required>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="parentCountry">Country</label>
+            <input type="text" id="parentCountry" required>
+          </div>
+          <div class="field">
+            <label for="parentAddress">Mailing address</label>
+            <input type="text" id="parentAddress">
+          </div>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline-dark" data-prev>Back</button>
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 3: Academic -->
+      <div class="form-step">
+        <h3 style="font-size:22px;margin-bottom:22px;">Academic Information</h3>
+        <div class="field">
+          <label for="academicGrade">Most recently completed grade</label>
+          <input type="text" id="academicGrade">
+        </div>
+        <div class="field">
+          <label for="learningNeeds">Learning needs or additional support (optional)</label>
+          <textarea id="learningNeeds" rows="4" placeholder="Let us know about any learning needs, accommodations, or context that would help your child's teachers."></textarea>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline-dark" data-prev>Back</button>
+          <button type="button" class="btn btn-primary" data-next>Continue</button>
+        </div>
+      </div>
+
+      <!-- Step 4: Documents -->
+      <div class="form-step">
+        <h3 style="font-size:22px;margin-bottom:22px;">Supporting Documents</h3>
+        <p style="color:var(--gray-500);font-size:14.5px;margin-bottom:20px;">Upload documents from your child's previous/old school. Accepted formats: PDF, JPG, PNG, HEIC — 15MB max each.</p>
+
+        <div class="doc-field">
+          <label>Report card / academic transcript <span class="doc-req">(required)</span></label>
+          <label class="doc-drop" id="dropTranscript">
+            <span class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg></span>
+            <span>
+              <span class="doc-text" data-label>Click to upload transcript</span>
+              <span class="doc-sub" data-sub>From the student's previous school</span>
+            </span>
+            <input type="file" id="fileTranscript" accept=".pdf,.jpg,.jpeg,.png,.heic,image/*,application/pdf">
+          </label>
+        </div>
+
+        <div class="doc-field">
+          <label>Birth certificate / student ID <span class="doc-req">(required)</span></label>
+          <label class="doc-drop" id="dropIdDoc">
+            <span class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg></span>
+            <span>
+              <span class="doc-text" data-label>Click to upload ID document</span>
+              <span class="doc-sub" data-sub>Birth certificate, passport, or national ID</span>
+            </span>
+            <input type="file" id="fileIdDoc" accept=".pdf,.jpg,.jpeg,.png,.heic,image/*,application/pdf">
+          </label>
+        </div>
+
+        <div class="doc-field">
+          <label>Passport-size photo <span class="doc-req">(optional)</span></label>
+          <label class="doc-drop" id="dropPhoto">
+            <span class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg></span>
+            <span>
+              <span class="doc-text" data-label>Click to upload photo</span>
+              <span class="doc-sub" data-sub>Recent passport-style photo of the student</span>
+            </span>
+            <input type="file" id="filePhoto" accept="image/*">
+          </label>
+        </div>
+
+        <div class="doc-field">
+          <label>Any other supporting document <span class="doc-req">(optional)</span></label>
+          <label class="doc-drop" id="dropOther">
+            <span class="doc-icon"><svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg></span>
+            <span>
+              <span class="doc-text" data-label>Click to upload document</span>
+              <span class="doc-sub" data-sub>Recommendation letter, medical note, etc.</span>
+            </span>
+            <input type="file" id="fileOther" accept=".pdf,.jpg,.jpeg,.png,.heic,image/*,application/pdf">
+          </label>
+        </div>
+
+        <p id="docStatus" style="font-size:13.5px;color:var(--gray-500);min-height:18px;"></p>
+
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline-dark" data-prev>Back</button>
+          <button type="button" class="btn btn-primary" data-next>Continue to Review</button>
+        </div>
+      </div>
+
+      <!-- Step 5: Review -->
+      <div class="form-step">
+        <h3 style="font-size:22px;margin-bottom:22px;">Review Your Application</h3>
+        <div id="reviewOutput"></div>
+        <div class="field mt-24" style="display:flex;align-items:flex-start;gap:10px;">
+          <input type="checkbox" id="confirmAccurate" style="width:auto;margin-top:4px;">
+          <label for="confirmAccurate" style="margin:0;font-weight:500;">I confirm the information above is accurate to the best of my knowledge.</label>
+        </div>
+        <p id="applicationStatus" style="font-size:14px;margin-top:14px;min-height:20px;"></p>
+        <div class="form-nav">
+          <button type="button" class="btn btn-outline-dark" data-prev>Back</button>
+          <button type="button" class="btn btn-primary" id="submitApplication">Submit Application</button>
+        </div>
+      </div>
+
+      <!-- Step 6: Confirmation -->
+      <div class="form-step">
+        <div class="confirm-box">
+          <div class="check"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#e6d3a3" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3 style="font-size:26px;">Application submitted</h3>
+          <p style="color:var(--gray-500);margin-top:12px;max-width:440px;margin-left:auto;margin-right:auto;">Thank you for applying to Atlanova Global School. Our admissions team will review your application and follow up by email within a few business days.</p>
+          <a href="index.html" class="btn btn-primary mt-32">Return to Home</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/mark.png" alt=""><span>Atlanova</span></div>
+        <p class="desc">A premium international online school for Grades 1–8, built for students and families anywhere in the world.</p>
+        <div class="social-row mt-24">
+          <a href="https://discord.gg/Z7UxG72fPN" target="_blank" rel="noopener" aria-label="Discord">D</a>
+          <a href="mailto:jawadimustafa7@gmail.com" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div><h5>School</h5><ul><li><a href="programs.html">Programs</a></li><li><a href="curriculum.html">Curriculum</a></li><li><a href="teachers.html">Teachers</a></li><li><a href="about.html">About Atlanova</a></li></ul></div>
+      <div><h5>Admissions</h5><ul><li><a href="admissions.html">How to Apply</a></li><li><a href="apply.html">Application Form</a></li><li><a href="tuition.html">Tuition</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div><h5>Community</h5><ul><li><a href="parents.html">For Parents</a></li><li><a href="students.html">For Students</a></li><li><a href="login.html">Login</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Atlanova Global School. All rights reserved.</span><span>A Global Classroom. A Brighter Future.</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

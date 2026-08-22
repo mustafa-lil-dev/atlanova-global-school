@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — Atlanova Global School</title>
+<meta name="description" content="Access your Atlanova Global School student, parent, teacher, or administrator account.">
+<link rel="icon" href="assets/mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+<header class="nav">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="assets/mark.png" alt="Atlanova monogram"><span class="brand-text">Atlanova<small>Global School</small></span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="programs.html">Programs</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="curriculum.html">Curriculum</a>
+      <a href="about.html">Why Atlanova</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="parents.html">For Parents</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-cta"><a href="login.html" class="nav-login">Login</a><a href="apply.html" class="btn btn-primary btn-sm">Apply Now</a></div>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  </header>
+<div class="mobile-menu">
+    <a href="programs.html">Programs</a><a href="how-it-works.html">How It Works</a><a href="curriculum.html">Curriculum</a>
+    <a href="about.html">Why Atlanova</a><a href="admissions.html">Admissions</a><a href="parents.html">For Parents</a>
+    <a href="about.html">About</a><a href="login.html">Login</a><a href="apply.html" class="btn btn-primary btn-block">Apply Now</a>
+  </div>
+
+
+<section class="page-header">
+  <div class="container">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Login</p>
+    <p class="eyebrow">Account Access</p>
+    <h1>Log in to Atlanova</h1>
+    <p>One login for everyone — students, parents, teachers, and administrators. What you see after logging in depends on your account, set up by the school.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="max-width:460px;">
+    <div class="form-card glass-sheen" id="loginCard">
+      <h3 style="font-size:19px;margin-bottom:6px;">Sign in to Atlanova</h3>
+      <p style="color:var(--gray-500);font-size:14px;margin-bottom:22px;">Use the login email and password given to you by the school.</p>
+      <div id="loginAlert"></div>
+      <form id="loginForm" onsubmit="return false;">
+        <div class="field"><label for="loginEmail">Login email</label><input type="email" id="loginEmail" autocomplete="username" required></div>
+        <div class="field"><label for="loginPass">Password</label><input type="password" id="loginPass" autocomplete="current-password" required></div>
+        <button class="btn btn-primary btn-block" id="loginSubmit" type="submit">Log In</button>
+      </form>
+    </div>
+    <p class="text-center mt-24" style="font-size:14px;color:var(--gray-500);">Not enrolled yet? <a href="apply.html" style="color:var(--purple);font-weight:600;">Start an application</a></p>
+    <p class="text-center mt-8" style="font-size:13px;color:var(--gray-500);">Live classes still happen on <a href="https://discord.gg/Z7UxG72fPN" target="_blank" rel="noopener" style="color:var(--purple);font-weight:600;">Discord</a>.</p>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var form = document.getElementById('loginForm');
+  if (!form || !window.supabaseClient) return;
+
+  // If already logged in, skip straight to the dashboard.
+  supabaseClient.auth.getSession().then(function (r) {
+    if (r.data && r.data.session) window.location.href = 'dashboard.html';
+  });
+
+  var alertBox = document.getElementById('loginAlert');
+  var submitBtn = document.getElementById('loginSubmit');
+
+  form.addEventListener('submit', function () {
+    var email = document.getElementById('loginEmail').value.trim();
+    var pass = document.getElementById('loginPass').value;
+    if (!email || !pass) return;
+    alertBox.innerHTML = '';
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Signing in…';
+    supabaseClient.auth.signInWithPassword({ email: email, password: pass }).then(function (res) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Log In';
+      if (res.error) {
+        alertBox.innerHTML = '<div class="auth-error">' + (res.error.message || 'Could not sign in. Check your email and password.') + '</div>';
+        return;
+      }
+      window.location.href = 'dashboard.html';
+    });
+  });
+});
+</script>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/mark.png" alt=""><span>Atlanova</span></div>
+        <p class="desc">A premium international online school for Grades 1–8, built for students and families anywhere in the world.</p>
+        <div class="social-row mt-24">
+          <a href="https://discord.gg/Z7UxG72fPN" target="_blank" rel="noopener" aria-label="Discord">D</a>
+          <a href="mailto:jawadimustafa7@gmail.com" aria-label="Email">@</a>
+        </div>
+      </div>
+      <div><h5>School</h5><ul><li><a href="programs.html">Programs</a></li><li><a href="curriculum.html">Curriculum</a></li><li><a href="teachers.html">Teachers</a></li><li><a href="about.html">About Atlanova</a></li></ul></div>
+      <div><h5>Admissions</h5><ul><li><a href="admissions.html">How to Apply</a></li><li><a href="apply.html">Application Form</a></li><li><a href="tuition.html">Tuition</a></li><li><a href="faq.html">FAQ</a></li></ul></div>
+      <div><h5>Community</h5><ul><li><a href="parents.html">For Parents</a></li><li><a href="students.html">For Students</a></li><li><a href="login.html">Login</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Atlanova Global School. All rights reserved.</span><span>A Global Classroom. A Brighter Future.</span></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
